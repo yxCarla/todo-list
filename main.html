@@ -22,12 +22,13 @@
         
         <div id="table">
             No Tasks Yet!
+            <button id="load">Load Previous List</button><button id="save">Save List</button>
             <div id="test">
-                <div id="form" style="display: none;">
-                    <input id="tasks" value="" type="text" placeholder="Your Task Here">
-                    <input type="submit" value="Add" id="submit" onclick="addTask()">
-                </div>
-        
+                <span id="listoftask"></span>
+            </div>
+            <div id="form" style="display: none;">
+                <input id="tasks" value="" type="text" placeholder="Your Task Here">
+                <input type="submit" value="Add" id="submit" onclick="addTask()">
             </div>
         <button onclick="addAnother()">+ Add Task</button>
         </div>
