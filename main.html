@@ -21,15 +21,18 @@
     <div id="bodyContent">
         
         <div id="table">
+            No Tasks Yet!
             <div id="test">
-            <form name="task">
-                <input id="tasks" value="" type="text" placeholder="Your Task Here">
-                <input type="submit" value="Add" id="submit" onclick="addTask()">
-            </form>
-        </div>
+                <div id="form" style="display: none;">
+                    <input id="tasks" value="" type="text" placeholder="Your Task Here">
+                    <input type="submit" value="Add" id="submit" onclick="addTask()">
+                </div>
+        
+            </div>
+        <button onclick="addAnother()">+ Add Task</button>
         </div>
         
-        <button onclick="addAnother()">+ Add Task</button>
+        
     </div>
 </body>
 
