@@ -24,15 +24,15 @@ loadbutton.addEventListener('click', function() {
     //names.concat(br.cloneNode());
     const nameArray = names.split('\n •');
     let nameArrayJoined = '<br>' + nameArray.join('<br>\n •');
-    if (names.value = 'undefined') {
+    if (names = 'undefined') {
       prealert.innerHTML = 'Whoops! There are no previous lists!';
       console.log('No Returned Data');
     }
-    else {
+    
       list.innerHTML = nameArrayJoined;
       var p = document.getElementsByTagName('p')[0];
       p.style.display = 'none';
-    }
+    
     
     console.log(names);
     //document.getElementById('listoftask').innerHTML = taskList;
