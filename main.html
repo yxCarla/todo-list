@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A To-Do List for you!">
+    <meta name="author" content="yxCarla">
+    <title>To-Do List</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div id="topContent">
+        <h1 id="header">
+            Your To-Do List for: <span id="customDate"></span>
+        </h1>
+        <h3>A reward you shall have when the list is free of tasks!<h3>
+    </div>
+    <div id="bodyContent">
+        
+        <div id="table">
+            <button id="load">Load Previous List</button><button id="save">Save List</button><button id="clear">Clear List</button>
+            <p>No Tasks Yet!</p>
+            <pre id="alert"></pre>
+            <pre id="test">
+                
+            </pre>
+            <div id="form" style="display: none;">
+                <input id="tasks" value="" type="text" placeholder="Your Task Here">
+                <input type="submit" value="Add" id="submit" onclick="addTask()">
+            </div>
+        <button onclick="addAnother()">+ Add Task</button>
+        </div>
+        
+        
+    </div>
+</body>
+
+</html>
