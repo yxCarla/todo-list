@@ -24,7 +24,7 @@ loadbutton.addEventListener('click', function() {
     //names.concat(br.cloneNode());
     const nameArray = names.split('\n •');
     let nameArrayJoined = '<br>' + nameArray.join('<br>\n •');
-    if (names = 'undefined') {
+    if (names = '') {
       prealert.innerHTML = 'Whoops! There are no previous lists!';
       console.log('No Returned Data');
     }
