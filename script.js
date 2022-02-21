@@ -42,24 +42,31 @@ loadbutton.addEventListener('click', function() {
   //test.appendChild(br.cloneNode());
 
     var names = localStorage.getItem('taskLists');
+    
     //names.concat(br.cloneNode());
-    const nameArray = names.split('\n •');
+    var nameArray = names.split('\n •');
+    
     let nameArrayJoined = '<br>' + nameArray.join('<br>\n •');
+    
 
     // error if no previous list
     if ((names === '') || (taskList = '')) {
       prealert.innerHTML = 'Whoops! There are no previous lists! Create a new list by clicking "Add Task"';
-      var p = document.getElementsByTagName('p')[0];
-      p.style.display = 'none';
+      //var prealert = document.getElementById('alert');
+      //prealert.style.display = 'none';
       console.log('No Returned Data');
     }
     else {
-      var p = document.getElementsByTagName('p')[0];
-      p.style.display = 'none';
+      //var prealert = document.getElementById('alert');
+      prealert.style.display = 'none';
       list.innerHTML = nameArrayJoined;
       
     }
     
+    // clearing input form
+    let form = document.getElementById('form');
+    form.style.display = 'none';
+
     console.log(names);
     //document.getElementById('listoftask').innerHTML = taskList;
 })
@@ -72,17 +79,19 @@ clearButton.addEventListener('click', function() {
   var taskList = document.getElementById('test').textContent;
   taskList = '';
   var prealert = document.getElementById('alert');
-  prealert.innerHTML = '';
+  prealert.innerHTML = 'No Tasks Yet!';
   var list = document.getElementById('test');
   
   localStorage.setItem('taskLists', taskList);
   var names = localStorage.getItem('taskLists');
   list.innerHTML = names;
+  let form = document.getElementById('form');
+  form.style.display = 'none';
 
   // for clearing
-  var p = document.getElementsByTagName('p')[0];
-  p.style.display = 'block';
-  if (p.style.display = 'block') {
+  //var p = document.getElementsByTagName('p')[0];
+  //p.style.display = 'block';
+  if (prealert.innerHTML == 'No Tasks Yet!') {
     window.alert('To-Do List successfully CLEARED!');
   }
 })
@@ -95,23 +104,26 @@ function addTask() {
     var br = document.createElement('br');
     var prealert = document.getElementById('alert');
     prealert.innerHTML = '';
-    var p = document.getElementsByTagName('p')[0];
-    p.style.display = 'none';
+
+    var checkbox = document.createElement('input');
+    checkbox.setAttribute('type', 'checkbox');
+    checkbox.onclick = checkTick();
+    //var p = document.getElementsByTagName('p')[0];
+    //p.style.display = 'none';
     var task = document.getElementById('tasks');
     //list.appendChild(task.value + '\n');
     var test = document.getElementById('test');
     //test.appendChild(br.cloneNode());
-    test.append('\n • ' + task.value);
-    test.appendChild(br.cloneNode());
-
-
+    test.append(checkbox, ' ', task.value, br.cloneNode());
+    //test.appendChild(br.cloneNode());
+    
 
     let form = document.getElementById('form');
     form.style.display = 'none';
     task.value = '';
 
 
-};
+}
 
 // to add another task form input
 
@@ -121,4 +133,10 @@ function addAnother() {
   form.style.display = 'block';
   var prealert = document.getElementById('alert');
   prealert.innerHTML = '';
+}
+
+// to cross out when checked off 
+
+function checkTick() {
+
 }

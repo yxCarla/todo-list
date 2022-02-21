@@ -25,7 +25,7 @@ button:hover {
 
 body {
     text-align: center;
-    width: 85%;
+    width: 90%;
     margin: 0 auto 0 auto;
     background-color: rgb(250, 231, 214);
     font-family: 'Fuzzy Bubbles';
@@ -47,10 +47,9 @@ div {
     margin-bottom: 3vh;
 }
 #footer {
-    position: relative;
-    bottom: 0;
-    margin: 0 auto 0 auto;
-    width: 85%;
+
+    margin: 20% auto 0 auto;
+    width: 90%;
     font-family: 'Roboto';
 }
 #table {
@@ -62,4 +61,12 @@ div {
 }
 #alert {
     margin-top: 2vh;
+}
+#tasks {
+    font-size: x-large;
+    font-family: 'Fuzzy Bubbles';
+}
+#submit {
+    font-size: x-large;
+    font-family: 'Fuzzy Bubbles';
 }
