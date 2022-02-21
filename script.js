@@ -49,6 +49,8 @@ loadbutton.addEventListener('click', function() {
     // error if no previous list
     if ((names === '') || (taskList = '')) {
       prealert.innerHTML = 'Whoops! There are no previous lists! Create a new list by clicking "Add Task"';
+      var p = document.getElementsByTagName('p')[0];
+      p.style.display = 'none';
       console.log('No Returned Data');
     }
     else {
@@ -101,6 +103,7 @@ function addTask() {
     //test.appendChild(br.cloneNode());
     test.append('\n • ' + task.value);
     test.appendChild(br.cloneNode());
+
 
 
     let form = document.getElementById('form');
