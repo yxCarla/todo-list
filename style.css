@@ -1,3 +1,27 @@
 #test {
     white-space: pre;
 }
+
+button  {
+    cursor: pointer;
+
+}
+
+body {
+    text-align: center;
+    width: 85%;
+    margin: 0 auto 0 auto;
+    background-color: rgb(250, 231, 214);
+    font-family: 'Roboto';
+}
+#header {
+    font-family: 'Shizuru';
+    font-size: 350%;
+}
+h2 {
+    font-family: 'Cabin Sketch';
+}
+#customDate {
+    font-weight: bold;
+    color: rgb(89, 206, 36);
+}

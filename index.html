@@ -8,34 +8,41 @@
     <meta name="author" content="yxCarla">
     <title>To-Do List</title>
     <link href="style.css" rel="stylesheet">
+    <!--<link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Shizuru">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin Sketch">
     <script src="script.js" defer></script>
 </head>
 
 <body>
     <div id="topContent">
-        <h1 id="header">
+        <div id="header">
             Your To-Do List for: <span id="customDate"></span>
-        </h1>
-        <h3>A reward you shall have when the list is free of tasks!<h3>
+        </div>
+        <h2>A reward you shall have when the list is free of tasks!<h3>
+        <div style="width: 80%; margin: 0 auto 4vh auto;">This handy site can serve as a To-Do List for yourself! Simply click to add tasks, and 
+            make sure to save your list before closing the tab or refreshing. On your next visit, 
+            you'll be able to load up your last saved list. <br><br>WARNING: Closing your browser will clear
+            the list cache automatically.
+        </div>
     </div>
     <div id="bodyContent">
-        
         <div id="table">
             <button id="load">Load Previous List</button><button id="save">Save Current List</button><button id="clear">Clear List Cache</button>
             <p>No Tasks Yet!</p>
             <pre id="alert"></pre>
-            <pre id="test">
-                
-            </pre>
+            <pre id="test"></pre>
             <div id="form" style="display: none;">
                 <input id="tasks" value="" type="text" placeholder="Your Task Here">
                 <input type="submit" value="Add" id="submit" onclick="addTask()">
             </div>
         <button onclick="addAnother()">+ Add Task</button>
         </div>
-        
-        
+    </div>
+    <div id="footer">
+        <h4>Find any bugs? Report them via <a href="https://github.com/yxCarla/todo-list/issues" target="_blank">GitHub</a> or <a href="mailto:businessyxcarla@gmail.com">Email</a></h4>
+        <h5>This project was made by yxCarla. Follow them on GitHub <a href="https://github.com/yxCarla" target="_blank">here</a></h5>
     </div>
 </body>
-
 </html>
