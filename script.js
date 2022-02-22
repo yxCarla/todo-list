@@ -144,17 +144,19 @@ function addTask() {
 
   var checkbox = document.createElement('input');
   checkbox.setAttribute('type', 'checkbox');
-  checkbox.onclick = checkTick();
+  //checkbox.onclick = checkTick();
 
   var button = document.createElement('button');
   button.innerHTML = 'x';
-  button.onclick = checkTick();
+  //button.onclick = checkTick();
 
+  var ul = document.createElement('ul');
+  ul.setAttribute('id', ul.textContent);
   var task = document.getElementById('tasks')
   var test = document.getElementById('test');
 // HAD  delete here
-  test.append(br.cloneNode(), checkbox, ' ', task.value, '  ', button, br.cloneNode());
-
+  ul.append(br.cloneNode(), checkbox, ' ', task.value, '  ', button, br.cloneNode());
+  test.append(ul);
   // testing log
   //console.log(test);
 
@@ -177,7 +179,7 @@ function addAnother() {
 }
 
 // to cross out when checked off 
-
+/*
 function checkTick() {
   var names = localStorage.getItem('taskLists');
   var taskList = document.getElementById('test').textContent;
@@ -201,6 +203,6 @@ function checkTick() {
   
   console.log(names);
   */
-}
+//}
 
 // create LI element and assign ID?
