@@ -12,7 +12,7 @@ let savebutton = document.getElementById('save');
 savebutton.addEventListener('click', function () {
 
   // commented code, will fix when time available
-  var taskList = document.getElementById('test');
+  var taskList = document.getElementById('test').textContent;
   /*if (taskList.value === '') {
     var prealert = document.getElementById('alert');
     prealert.innerHTML = `You don't have any tasks to save! Add some by clicking "Add Task"`;
@@ -37,56 +37,75 @@ loadbutton.addEventListener('click', function () {
   var prealert = document.getElementById('alert');
 
   // test code
-
   //var br = document.createElement('br');
   //test.appendChild(br.cloneNode());
 
   var names = localStorage.getItem('taskLists');
-  var checkbox = document.createElement('input');
-  checkbox.setAttribute('type', 'checkbox');
+  const nameArray = names.split(' x'); // use delete for split
 
-  //names.concat(br.cloneNode());
-  const nameArray = names.split('a');
-  nameArray.forEach(addCheck);
-  console.log(nameArray);
+  // bunch of including stuff that didn't work
 
+  //nameArray.includes(' (delete)');
+  //if (nameArray.includes = true) {
+    //nameArray.forEach(function() {
+      //const index = nameArray.indexOf(' (delete)');
+      //nameArray[index] = "<input type='checkbox'>";
 
-  let nameArrayJoined = '<br>' + nameArray.join('<br>\n •');
-  console.log(nameArrayJoined);
+      const joinArray = nameArray.pop().split(' ');
+      console.log(joinArray);
+      //const nameArrayJoined = nameArray.concat("<input type='checkbox'>");
+      const finalJoin = 
+      "<br><input type='checkbox'>".concat
+      (nameArray.join(" <button onclick='checkTick()'>x</button><br><br><input type='checkbox'> ").concat
+      (" <button onclick='checkTick()'>x</button> <br>"));
+      
+      //const nameArrayJoined = nameArray.concat("<input type='checkbox'>");
+      console.log(nameArray);
+      //console.log(nameArrayJoined);
+    //})
+  //}
+  //nameArray.forEach(addCheck);
+  //console.log(nameArray);
+
+// FIX ARRAYS /////
+
+  //let nameArrayJoined = '<br>' + nameArray.join('<br>\n •');
+  //console.log(nameArrayJoined);
   console.log(names);
   // error if no previous list
   if ((names === '') || (taskList = '')) {
     prealert.innerHTML = 'Whoops! There are no previous lists! Create a new list by clicking "Add Task"';
-    //var prealert = document.getElementById('alert');
-    //prealert.style.display = 'none';
+
     console.log('No Returned Data');
   }
   else {
-    //var prealert = document.getElementById('alert');
-    prealert.style.display = 'none';
-    list.innerHTML = nameArrayJoined;
 
-  }
+    prealert.innerHTML = '';
+    
+    list.innerHTML = finalJoin;
+
+  } 
 
   // clearing input form
   let form = document.getElementById('form');
   form.style.display = 'none';
-
-
-  //document.getElementById('listoftask').innerHTML = taskList;
 })
 
-function addCheck(value) {
+/*function addCheck(value) {
   var names = localStorage.getItem('taskLists');
-  const nameArray = names.split('a');
+  const nameArray = names.split(' \n•');
   console.log(nameArray); // THIS ONE
   var checkbox = document.createElement('input');
   checkbox.setAttribute('type', 'checkbox');
 
   let nameArrayJoined = '<br>' + nameArray.join(' <br>\n') + '(delete)';
-  nameArrayJoined += checkbox, nameArrayJoined;
+  nameArrayJoined += checkbox + value;
   console.log(nameArrayJoined);
-}
+  var list = document.getElementById('test');
+  list.innerHTML = nameArrayJoined;
+
+  // FIX THIS FUNCTION
+}*/
 
 
 // clear button function 
@@ -125,15 +144,18 @@ function addTask() {
   var checkbox = document.createElement('input');
   checkbox.setAttribute('type', 'checkbox');
   checkbox.onclick = checkTick();
-  //var p = document.getElementsByTagName('p')[0];
-  //p.style.display = 'none';
-  var task = document.getElementById('tasks');
-  //list.appendChild(task.value + '\n');
+
+  var button = document.createElement('button');
+  button.innerHTML = 'x';
+  button.onclick = checkTick();
+
+  var task = document.getElementById('tasks')
   var test = document.getElementById('test');
-  //test.appendChild(br.cloneNode());
-  test.append(checkbox, task.value, ' (delete)', br.cloneNode());
-  //test.appendChild(br.cloneNode());
-  console.log(test);
+// HAD  delete here
+  test.append(br.cloneNode(), checkbox, ' ', task.value, '  ', button, br.cloneNode());
+
+  // testing log
+  //console.log(test);
 
 
   let form = document.getElementById('form');
@@ -156,5 +178,6 @@ function addAnother() {
 // to cross out when checked off 
 
 function checkTick() {
-
+  var names = localStorage.getItem('taskLists');
+  console.log(names);
 }
