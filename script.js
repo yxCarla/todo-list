@@ -61,6 +61,7 @@ loadbutton.addEventListener('click', function () {
       
       //const nameArrayJoined = nameArray.concat("<input type='checkbox'>");
       console.log(nameArray);
+      console.log(finalJoin)
       //console.log(nameArrayJoined);
     //})
   //}
@@ -179,5 +180,27 @@ function addAnother() {
 
 function checkTick() {
   var names = localStorage.getItem('taskLists');
+  var taskList = document.getElementById('test').textContent;
+  const newList = taskList.split(' x');
+  console.log(newList);
+  localStorage.setItem('taskLists', newList);
+  console.log(taskList);
+  /*var list = document.getElementById('test');
+  list.innerHTML = names;
+  
   console.log(names);
+  const index = names.indexOf(' x ');
+
+    const nameArray = names.split(' x');
+    nameArray.splice(index, index);
+    nameArray[index] = '';
+    nameArray;
+    console.log(nameArray);
+
+  //const nameArray = names.split(' x');
+  
+  console.log(names);
+  */
 }
+
+// create LI element and assign ID?
