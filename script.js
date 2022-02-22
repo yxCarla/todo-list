@@ -12,7 +12,7 @@ let savebutton = document.getElementById('save');
 savebutton.addEventListener('click', function () {
 
   // commented code, will fix when time available
-  var taskList = document.getElementById('test').textContent;
+  var taskList = document.getElementById('test');
   /*if (taskList.value === '') {
     var prealert = document.getElementById('alert');
     prealert.innerHTML = `You don't have any tasks to save! Add some by clicking "Add Task"`;
@@ -26,7 +26,7 @@ savebutton.addEventListener('click', function () {
   //}
   
 })
-
+  
 
 // load button function 
 
@@ -42,13 +42,18 @@ loadbutton.addEventListener('click', function() {
   //test.appendChild(br.cloneNode());
 
     var names = localStorage.getItem('taskLists');
+    var checkbox = document.createElement('input');
+    checkbox.setAttribute('type', 'checkbox');
     
     //names.concat(br.cloneNode());
-    var nameArray = names.split('\n •');
-    
-    let nameArrayJoined = '<br>' + nameArray.join('<br>\n •');
-    
+    const nameArray = names.split('(delete)');
+    //nameArray.forEach(addCheck);
+  console.log(nameArray);
 
+    
+    let nameArrayJoined = '<br>' + nameArray.join(' <br>\n');
+    console.log(nameArrayJoined);
+    console.log(names);
     // error if no previous list
     if ((names === '') || (taskList = '')) {
       prealert.innerHTML = 'Whoops! There are no previous lists! Create a new list by clicking "Add Task"';
@@ -67,10 +72,21 @@ loadbutton.addEventListener('click', function() {
     let form = document.getElementById('form');
     form.style.display = 'none';
 
-    console.log(names);
+    
     //document.getElementById('listoftask').innerHTML = taskList;
 })
 
+/*function addCheck(value) {
+  var names = localStorage.getItem('taskLists');
+const nameArray = names.split('(delete)');
+var checkbox = document.createElement('input');
+    checkbox.setAttribute('type', 'checkbox');
+    
+    //let nameArrayJoined = '<br>' + nameArray.join(' <br>\n') + '(delete)';
+  let nameArrayJoined = checkbox.append(value);
+  console.log(nameArrayJoined);
+}
+*/
 
 // clear button function 
 
@@ -114,8 +130,9 @@ function addTask() {
     //list.appendChild(task.value + '\n');
     var test = document.getElementById('test');
     //test.appendChild(br.cloneNode());
-    test.append(checkbox, ' ', task.value, br.cloneNode());
+    test.append(checkbox, task.value, ' (delete)', br.cloneNode());
     //test.appendChild(br.cloneNode());
+    console.log(test);
     
 
     let form = document.getElementById('form');
