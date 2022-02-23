@@ -7,6 +7,23 @@ function checkStyle() {
 
   if (screen.width < 801) {
     notice.style.display = 'none';
+    table.classList.remove('col-6');
+    table.classList.add('col-12');
+  }
+  else {
+    notice.style.display = 'block';
+    table.classList.remove('col-12');
+    table.classList.add('col-6');
+  }
+  if (screen.width > 801) {
+    notice.style.display ='block';
+    table.classList.remove('col-12');
+    table.classList.add('col-6');
+  }
+  else {
+    notice.style.display = 'none';
+    table.classList.remove('col-6');
+    table.classList.add('col-12');
   }
   if (notice.style.display == 'none') {
     table.classList.remove('col-6');
