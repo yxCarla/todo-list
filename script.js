@@ -1,10 +1,21 @@
+// styling 
+
+function checkStyle() {
+  
+  var notice = document.getElementById('notice');
+  var table = document.getElementById('table');
+  if (notice.style.display == 'none') {
+    table.classList.remove('col-6');
+    table.classList.add('col-12');
+  }
+}
+
 // date functions
 
 const dateBox = document.getElementById('customDate');
 var date = new Date().toDateString();
 var dateTime = new Date().toLocaleString();
 dateBox.innerHTML = date;
-
 
 // save button function
 
@@ -54,10 +65,10 @@ loadbutton.addEventListener('click', function () {
       const joinArray = nameArray.pop().split(' ');
       console.log(joinArray);
       //const nameArrayJoined = nameArray.concat("<input type='checkbox'>");
-      const finalJoin = 
+      const finalJoin = // ADD IN THE CHECKTICK FUNCTION
       "<br><ul><input type='checkbox' onclick='checkTick()'>".concat
-      (nameArray.join(" <button onclick='checkTick()'>x</button></ul><ul><input type='checkbox' onclick='checkTick()'> ").concat
-      (" <button onclick='checkTick()'>x</button> </ul>"));
+      (nameArray.join(" <button>x</button></ul><ul><input type='checkbox' onclick='checkTick()'> ").concat
+      (" <button >x</button> </ul>"));
       
       //const nameArrayJoined = nameArray.concat("<input type='checkbox'>");
       console.log(nameArray);
@@ -144,7 +155,7 @@ function addTask() {
 
   var checkbox = document.createElement('input');
   checkbox.setAttribute('type', 'checkbox');
-  checkbox.onclick = checkTick();
+  //checkbox.onclick = checkTick();
 
   var deleted = document.createElement('button');
   deleted.innerHTML = 'x';

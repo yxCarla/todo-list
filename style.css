@@ -1,5 +1,54 @@
+* {
+    box-sizing: border-box;
+  }
+  
+
+  
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  [class*="col-"] {
+    float: left;
+    padding: 15px;
+    
+  }
+  
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+
+#notice {
+    background: url('https://cdn.discordapp.com/attachments/925484821411672097/945873128784027668/Untitled52_20220222214157.png');
+    height: 640px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+}
+
+@media screen and (max-width: 800px) {
+    #notice {
+        display: none;
+    }
+    #table {
+        
+        margin: 0 auto 0 auto;
+    }
+}
+
 #test {
-    white-space: pre;
+    
     font-family: 'Fuzzy Bubbles';
     font-size: x-large;
 }
@@ -7,10 +56,11 @@
 button  {
     cursor: pointer;
     margin-right: 6px;
+    margin-top: 6px;
     font-family: 'Fuzzy Bubbles';
     font-size: large;
-    border-color: rgb(89, 206, 36);
-    color: rgb(89, 206, 36);
+    border-color: rgb(75, 192, 21);
+    color: rgb(75, 192, 21);
     font-weight: bold;
     padding: 4px 12px;
     width: fit-content;
@@ -18,7 +68,7 @@ button  {
 }
 button:hover {
     border-color: white;
-    background-color: rgb(89, 206, 36);
+    background-color: rgb(75, 192, 21);
     color: white;
     transition: 0.5s;
 }
@@ -41,14 +91,14 @@ body {
 }
 #customDate {
     font-weight:bolder;
-    color: rgb(89, 206, 36);
+    color: rgb(75, 192, 21);
 }
 div {
     margin-bottom: 3vh;
 }
 #footer {
 
-    margin: 20% auto 0 auto;
+    margin: 0 auto 0 auto;
     width: 90%;
     font-family: 'Roboto';
 }
