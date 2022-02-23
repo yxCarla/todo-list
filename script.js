@@ -4,6 +4,10 @@ function checkStyle() {
   
   var notice = document.getElementById('notice');
   var table = document.getElementById('table');
+
+  if (screen.width < 801) {
+    notice.style.display = 'none';
+  }
   if (notice.style.display == 'none') {
     table.classList.remove('col-6');
     table.classList.add('col-12');

@@ -17,7 +17,7 @@
     <link rel="icon" type="image/x-icon" href="checkmark.png">
 </head>
 
-<body>
+<body onresize="checkStyle()">
     <div id="topContent">
         <div id="header">
             Your To-Do List for: <span id="customDate"></span>
@@ -33,7 +33,7 @@
         <div class="col-3" id="notice">
             
         </div>
-        <div id="table" class="col-6" onload="checkStyle()">
+        <div id="table" class="col-6">
             <button id="load">Load Previous List</button><button id="save">Save Current List</button><button id="clear">Clear List Cache</button>
             <div id="alert">No Tasks Yet!</div>
             <div id="test"></div>
