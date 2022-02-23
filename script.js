@@ -55,9 +55,9 @@ loadbutton.addEventListener('click', function () {
       console.log(joinArray);
       //const nameArrayJoined = nameArray.concat("<input type='checkbox'>");
       const finalJoin = 
-      "<br><input type='checkbox'>".concat
-      (nameArray.join(" <button onclick='checkTick()'>x</button><br><br><input type='checkbox'> ").concat
-      (" <button onclick='checkTick()'>x</button> <br>"));
+      "<br><ul><input type='checkbox' onclick='checkTick()'>".concat
+      (nameArray.join(" <button onclick='checkTick()'>x</button></ul><ul><input type='checkbox' onclick='checkTick()'> ").concat
+      (" <button onclick='checkTick()'>x</button> </ul>"));
       
       //const nameArrayJoined = nameArray.concat("<input type='checkbox'>");
       console.log(nameArray);
@@ -144,18 +144,20 @@ function addTask() {
 
   var checkbox = document.createElement('input');
   checkbox.setAttribute('type', 'checkbox');
-  //checkbox.onclick = checkTick();
+  checkbox.onclick = checkTick();
 
-  var button = document.createElement('button');
-  button.innerHTML = 'x';
-  //button.onclick = checkTick();
+  var deleted = document.createElement('button');
+  deleted.innerHTML = 'x';
+  //deleted.addEventListener('dblclick', checkTick());
+  //deleted.setAttribute('onclick', checkTick());
 
   var ul = document.createElement('ul');
-  ul.setAttribute('id', ul.textContent);
-  var task = document.getElementById('tasks')
+  ul.setAttribute('class', 'testing');
+  console.log(ul);
+  var task = document.getElementById('tasks');
   var test = document.getElementById('test');
 // HAD  delete here
-  ul.append(br.cloneNode(), checkbox, ' ', task.value, '  ', button, br.cloneNode());
+  ul.append(checkbox, ' ', task.value, '  ', deleted, br.cloneNode());
   test.append(ul);
   // testing log
   //console.log(test);
@@ -179,9 +181,15 @@ function addAnother() {
 }
 
 // to cross out when checked off 
-/*
+
 function checkTick() {
-  var names = localStorage.getItem('taskLists');
+  
+  
+  window.alert('Sorry! Function is under construction!');
+  
+  // var checkbox find, see if checked = true, then cross?
+
+  /*var names = localStorage.getItem('taskLists');
   var taskList = document.getElementById('test').textContent;
   const newList = taskList.split(' x');
   console.log(newList);
@@ -199,10 +207,10 @@ function checkTick() {
     nameArray;
     console.log(nameArray);
 
-  //const nameArray = names.split(' x');
+  const nameArray = names.split(' x');
   
   console.log(names);
   */
-//}
+}
 
 // create LI element and assign ID?
